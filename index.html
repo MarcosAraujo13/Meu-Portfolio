@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDITE: título e descrição que aparecem no Google -->
+  <title>Marcos Galvão De Araujo | Portfólio</title>
+  <meta name="description" content="Portfólio de Seu Nome, designer e desenvolvedor.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FUNDO DESFOCADO -->
+  <div class="fundo" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+
+  <!-- ========== MENU ========== -->
+  <header class="topo container">
+    <a class="logo" href="#inicio">Marcos Galvão De Araujo</a>
+    <nav aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== INÍCIO ========== -->
+    <section id="inicio" class="hero container">
+      <div class="hero-texto">
+        <p class="saudacao">Olá, eu sou</p>
+        <h1>Marcos Araujo</h1>
+        <p class="resumo">Analista e desenvolvedor de sistemas.</p>
+        <a class="botao" href="#projetos">Ver meus projetos</a>
+      </div>
+
+      <!-- SUA FOTO: salve a imagem nesta pasta com o nome foto.jpg (ou troque o nome em src="...").
+          Enquanto o arquivo não existir, aparece o espaço reservado "Sua foto aqui". -->
+      <div class="moldura">
+        <span class="vazio">Sua foto aqui<small>salve como foto.jpg</small></span>
+        <img src="/image/Foto de perfil.PNG" alt="Foto de Seu Nome" onerror="this.remove()">
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+<section id="projetos" class="container">
+  <h2>Projetos</h2>
+  <div class="grade">
+
+    <!-- LINKS: em cada projeto, troque o endereço em href="..." pela URL do seu site (ex.: https://meusite.com.br).
+        O site abre em uma nova aba. Para adicionar um projeto, copie um bloco <a class="card"> inteiro e cole abaixo.
+        IMAGENS: salve os arquivos na pasta /image (ex.: /image/projeto1.jpg) e troque o nome em src="..." se precisar. -->
+
+    <a class="card" href="https://marcosaraujo13.github.io/Smartmarket/" target="_blank" rel="noopener">
+      <img class="capa" src="/image/smartmarket.jpg" alt="Captura de tela do aplicativo App Maré" loading="lazy">
+      <h3>Smartmarket</h3>
+      <p>Site para exemplo de um supermercado inteligente.</p>
+      <span class="tag">Site· 2026</span>
+      <span class="visitar">Visitar site</span>
+    </a>
+
+    <a class="card" href="https://marcosaraujo13.github.io/Conversor-de-Bases/" target="_blank" rel="noopener">
+      <img class="capa" src="/image/conversor.jpg" alt="Site e identidade visual da Casa Alvorada" loading="lazy">
+      <h3>Conversor de Bases</h3>
+      <p>Site para converter Bases Numericas.</p>
+      <span class="tag">Site · 2026</span>
+      <span class="visitar">Visitar site</span>
+    </a>
+
+    <a class="card" href="https://marcosaraujo13.github.io/Calculadora-Gasolina-ou-Alcool/" target="_blank" rel="noopener">
+      <img class="capa" src="/image/calculadora gasolina ou álcool.jpg" alt="Painel de dados Orbita" loading="lazy">
+      <h3>Calculador Gasolina ou Álcool</h3>
+      <p>Site para calcular qual combustivel rende mais pelo preço.</p>
+      <span class="tag">Site · 2026</span>
+      <span class="visitar">Visitar site</span>
+    </a>
+
+
+  </div>
+</section>
+
+    <!-- ========== SOBRE ========== -->
+    <section id="sobre" class="container">
+      <h2>Sobre mim</h2>
+      <div class="sobre">
+        <div>
+          <!-- EDITE: sua história -->
+          <p>Sou Marcos Galvão de Araujo, um profissional apaixonado por tecnologia e em constante evolução. Atualmente graduando em Análise e Desenvolvimento de Sistemas, possuo também formação Técnica em Informática pelo IFPA. Ao longo da minha trajetória, desenvolvi habilidades sólidas em front-end (HTML, CSS e JavaScript), prototipação de interfaces, linguagens de programação e algoritmos, Banco de Dados Relacional. No dia a dia, sou movido por desafios: tenho facilidade de aprendizado rápido, sou proativo e acredito que o trabalho em equipe é a chave para construir soluções inovadoras e eficientes..</p>
+        </div>
+        <!-- EDITE: suas habilidades -->
+        <ul class="habilidades" aria-label="Habilidades">
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Design de interface</li>
+          <li>Front-end</li>
+          <li>Front-back</li>
+          <li>Identidade visual</li>
+          <li>Prototipagem</li>
+          <li>Acessibilidade</li>
+          
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato" class="container contato">
+      <h2>Vamos conversar?</h2>
+      <p>Me conte sobre o seu projeto.</p>
+      <!-- EDITE: seu e-mail e redes sociais -->
+      <a class="email" href="https://mail.google.com/mail/?view=cm&fs=1&to=marcosck02@gmail.com" target="_blank" rel="noopener">marcosck02@gmail.com</a>
+      <ul class="redes">
+        <li><a href="https://www.linkedin.com/in/marcos-galv%C3%A3o-de-araujo-/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/MarcosAraujo13" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=marcosck02@gmail.com" target="_blank" rel="noopener">E-mail</a></li>
+        <li><a href="https://wa.me/5594992493692" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="container">© 2026 Marcos Galvão De Araujo. Todos os direitos reservados.</footer>
+
+</body>
+</html>

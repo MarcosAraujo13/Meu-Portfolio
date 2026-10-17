@@ -1,0 +1,222 @@
+/* =========================================================
+  CORES — mude aqui e o site inteiro muda
+   ========================================================= */
+:root {
+  --fundo: #F3F8FC;        /* fundo da página */
+  --texto: #2F4358;        /* texto principal */
+  --texto-suave: #61758A;  /* textos secundários */
+  --destaque: #3B7DB8;     /* botões e links (azul) */
+  --destaque-escuro: #2C6490;
+  --linha: #2434471f;      /* linhas e bordas */
+
+  /* fundo desfocado e efeito vidro */
+  --blob1: #9CCBF2;
+  --blob2: #C3D2FF;
+  --blob3: #B4E6EE;
+  --vidro: rgba(255, 255, 255, .55);
+  --vidro-borda: rgba(255, 255, 255, .8);
+
+  /* cores das capas dos projetos */
+  --cor1: #D6E8F7;
+  --cor2: #DCE6FA;
+  --cor3: #DDF0F4;
+  --cor4: #CCE0F1;
+
+  /* fontes */
+  --fonte-titulo: "Quicksand", "Nunito", system-ui, sans-serif;
+  --fonte-texto: "Nunito", system-ui, sans-serif;
+}
+
+/* Tema escuro automático (apague este bloco se não quiser) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #131C26;
+    --texto: #E6EFF8;
+    --texto-suave: #9FB2C6;
+    --destaque: #8DC0EA;
+    --destaque-escuro: #A9D2F2;
+    --linha: #E6EFF826;
+    --blob1: #2B5A8A;
+    --blob2: #3A4A9A;
+    --blob3: #1F6677;
+    --vidro: rgba(24, 38, 54, .55);
+    --vidro-borda: rgba(255, 255, 255, .12);
+    --cor1: #1F3649;
+    --cor2: #272F4C;
+    --cor3: #1E3D45;
+    --cor4: #243A55;
+  }
+}
+
+/* =========================================================
+  BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 400 1.0625rem/1.7 var(--fonte-texto);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--destaque); outline-offset: 3px; border-radius: 4px; }
+
+/* =========================================================
+  FUNDO DESFOCADO (manchas de cor que flutuam devagar)
+  Para usar uma FOTO sua no lugar, veja o comentário no fim deste bloco.
+   ========================================================= */
+.fundo { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.fundo span { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .75; }
+.fundo .b1 { width: 55vmax; height: 55vmax; background: var(--blob1); top: -18vmax; left: -14vmax; animation: flutua 26s ease-in-out infinite alternate; }
+.fundo .b2 { width: 48vmax; height: 48vmax; background: var(--blob2); top: 25vh; right: -16vmax; animation: flutua 32s ease-in-out infinite alternate-reverse; }
+.fundo .b3 { width: 50vmax; height: 50vmax; background: var(--blob3); bottom: -22vmax; left: 12vw; animation: flutua 38s ease-in-out infinite alternate; }
+@keyframes flutua { from { transform: translate(0, 0) scale(1); } to { transform: translate(4vmax, 3vmax) scale(1.08); } }
+/* COM FOTO: salve a imagem na pasta (ex.: fundo.jpg), apague os três <span> no HTML e use:
+   .fundo { background: url("fundo.jpg") center / cover; filter: blur(30px); transform: scale(1.1); } */
+
+.container { max-width: 960px; margin: 30px auto; padding: 0 1.5rem; }
+
+h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 500; line-height: 1.15; margin: 0; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 2rem; }
+h3 { font-size: 1.25rem; }
+
+section { padding: 4.5rem 0 1rem; }
+
+/* =========================================================
+  MENU
+   ========================================================= */
+.topo {
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: var(--vidro);
+  border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 1.75rem;
+  width: calc(100% - 3rem);
+  max-width: 960px;
+}
+
+.logo { font-family: var(--fonte-titulo); font-weight: 500; font-size: 1.2rem; text-decoration: none; }
+.topo nav { display: flex; gap: 1.5rem; }
+.topo nav a { text-decoration: none; color: var(--texto-suave); transition: color .2s; }
+.topo nav a:hover { color: var(--texto); }
+
+/* =========================================================
+  INÍCIO
+   ========================================================= */
+.hero { padding-top: 3rem; padding-bottom: 2rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+/* MOLDURA DA FOTO: coloque foto.jpg na pasta. Sem o arquivo, aparece o espaço reservado. */
+.moldura {
+  position: relative; width: 100%; max-width: 340px; justify-self: center; aspect-ratio: 4 / 5; overflow: hidden;
+  border-radius: 58% 42% 55% 45% / 50% 55% 45% 50%;
+  background: var(--vidro); border: 1px solid var(--vidro-borda);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(59, 125, 184, .18);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.moldura img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.moldura .vazio { color: var(--texto-suave); font-size: 1rem; line-height: 1.5; padding: 1rem; }
+.moldura .vazio small { display: block; font-size: .85rem; opacity: .8; }
+.saudacao { margin: 0 0 .5rem; color: var(--texto-suave); }
+.hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); letter-spacing: -.02em; }
+.resumo { max-width: 32rem; font-size: 1.25rem; color: var(--texto-suave); margin: 1.5rem 0 2rem; }
+
+.botao {
+  display: inline-block; padding: .85rem 1.6rem; border-radius: 999px;
+  background: var(--destaque); color: #fff; font-weight: 500; text-decoration: none;
+  transition: background .2s;
+}
+.botao:hover { background: var(--destaque-escuro); }
+@media (prefers-color-scheme: dark) { .botao { color: #0F1A24; } }
+
+/* =========================================================
+   PROJETOS
+   ========================================================= */
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+
+.card {
+  text-decoration: none; display: block; padding: .9rem .9rem 1.4rem;
+  background: var(--vidro); border: 1px solid var(--vidro-borda);
+  border-radius: 2rem; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(59, 125, 184, .10);
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(59, 125, 184, .18); }
+.card h3, .card p, .card .tag, .card .visitar { margin-left: .6rem; margin-right: .6rem; }
+.card .capa {
+  aspect-ratio: 4 / 3; border-radius: 1.4rem 2.6rem 1.4rem 2.6rem; margin-bottom: 1rem;
+  display: block;
+  font-family: var(--fonte-titulo); font-size: 1.6rem; color: var(--texto);
+  object-fit: cover; width: 100%;
+  transition: transform .25s;
+}
+.card:hover .capa { transform: scale(1.02); }
+.card p { margin: .25rem 0 .5rem; color: var(--texto-suave); }
+.tag { font-size: .9rem; color: var(--texto-suave); display: block; }
+.visitar { display: inline-block; margin-top: .25rem; font-weight: 500; color: var(--destaque-escuro); border-bottom: 2px solid transparent; transition: border-color .2s; }
+.visitar::after { content: " \2197"; }
+.card:hover .visitar, .card:focus-visible .visitar { border-color: var(--destaque); }
+
+.capa {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.sobre { display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: start; }
+.sobre p { margin: 0 0 1.2rem; max-width: 36rem; }
+.habilidades { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.habilidades li { padding: .4rem 1rem; background: var(--vidro); border: 1px solid var(--vidro-borda); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 999px; font-size: .95rem; }
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+.contato { padding-bottom: 3rem; }
+.contato p { color: var(--texto-suave); margin: 0 0 1.25rem; }
+.email { font-family: var(--fonte-titulo); font-size: clamp(1.4rem, 4vw, 2rem); text-decoration-color: var(--destaque); text-underline-offset: .2em; text-decoration-thickness: 2px; }
+.redes { list-style: none; display: flex; gap: 1.5rem; padding: 0; margin: 1.75rem 0 0; flex-wrap: wrap; }
+.redes a { color: var(--texto-suave); }
+.redes a:hover { color: var(--texto); }
+
+footer { border-top: 1px solid var(--linha); padding-top: 1.5rem; padding-bottom: 2.5rem; margin-top: 2rem; color: var(--texto-suave); font-size: .9rem; }
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+  .moldura { max-width: 240px; order: -1; justify-self: start; }
+  .sobre { grid-template-columns: 1fr; gap: 2rem; }
+  section { padding-top: 3.5rem; }
+
+  /* CABEÇALHO NO CELULAR */
+  .topo {
+    flex-direction: column;      /* logo em cima, menu embaixo */
+    gap: .6rem;
+    border-radius: 1.5rem;       /* pílula muito alta fica estranha quando empilha */
+    padding: .9rem 1rem;
+    text-align: center;
+  }
+  .logo { font-size: 1.05rem; }
+  .topo nav {
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
